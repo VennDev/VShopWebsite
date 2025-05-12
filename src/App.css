@@ -4,3 +4,83 @@
 html {
   transition: background-color 0.3s, color 0.3s;
 }
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #e5e7eb; /* Màu nền sáng */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+.dark .marquee-container {
+  background-color: #374151; /* Màu nền tối */
+}
+
+.marquee-text {
+  display: inline-block;
+  font-size: 1.125rem; /* text-lg */
+  animation: marquee 20s linear infinite;
+}
+
+.rainbow-text {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: marquee 20s linear infinite, rainbow 7s linear infinite;
+}
+
+.dark .rainbow-text {
+  /* Giữ nguyên gradient để đảm bảo hiệu ứng rõ ràng trong dark mode */
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Tạm dừng hiệu ứng khi hover */
+.marquee-container:hover .marquee-text {
+  animation-play-state: paused;
+}

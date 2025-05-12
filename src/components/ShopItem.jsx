@@ -14,8 +14,8 @@ function ShopItem({
       {imageSrc && (
         <img src={imageSrc} alt={name} className="w-16 h-16 mb-2 mx-auto" />
       )}
-      <p>Buy Price: {buyPrice} coins/unit</p>
-      <p>Sell Price: {sellPrice} coins/unit</p>
+      <p class="text-green-500">Buy Price: {buyPrice} coins/unit</p>
+      <p class="text-red-500">Sell Price: {sellPrice} coins/unit</p>
       <input
         id={inputId}
         type="number"

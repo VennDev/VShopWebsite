@@ -9,14 +9,13 @@ function App() {
   const [balance, setBalance] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [searchQuery, setSearchQuery] = useState(""); // New state for search query
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Lấy trạng thái từ localStorage, mặc định là light mode
     return localStorage.getItem("theme") === "dark";
   });
   const itemsPerPage = 6;
   const urlRequest = "http://cnttv.ddns.net:19132";
 
-  // Cập nhật class dark và lưu vào localStorage
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
@@ -27,7 +26,6 @@ function App() {
     }
   }, [isDarkMode]);
 
-  // Hàm chuyển đổi chế độ
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
@@ -98,35 +96,40 @@ function App() {
     }
   };
 
-  // Lọc vật phẩm theo danh mục
-  const filteredItems =
+  // Original item filtering by category
+  const filteredItemsByCategory =
     selectedCategory === "All"
       ? items
       : items.filter((item) => item.category === selectedCategory);
 
-  // Tính toán các vật phẩm hiển thị trên trang hiện tại
+  // Apply search filter on top of category filter
+  const filteredItems = filteredItemsByCategory.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Calculate items to display on the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredItems.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Tính tổng số trang
+  // Calculate total pages
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
-  // Hàm chuyển trang
+  // Handle page change
   const handlePageChange = (pageNumber) => {
     if (pageNumber >= 1 && pageNumber <= totalPages) {
       setCurrentPage(pageNumber);
     }
   };
 
-  // Lấy danh sách danh mục duy nhất
+  // Get unique categories
   const categories = ["All", ...new Set(items.map((item) => item.category))];
 
   return (
     <div className="min-h-screen font-sans bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-      <div className="container mx-auto p-4 flex">
+      <div className="mx-auto p-4 flex">
         {/* Sidebar */}
-        <div className="w-1/4 bg-white dark:bg-gray-800 p-4 rounded shadow-md mr-4">
+        <div className="w-1/5 bg-white dark:bg-gray-800 p-4 rounded shadow-md mr-4">
           <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
             Categories
           </h2>
@@ -140,8 +143,12 @@ function App() {
                   }}
                   className={`w-full text-left p-2 rounded ${
                     selectedCategory === category
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-200 dark:bg-gray-700 dark:text-white"
+                      ? isDarkMode
+                        ? "bg-blue-500 text-white"
+                        : "bg-blue-200"
+                      : isDarkMode
+                      ? "bg-gray-200 dark:bg-gray-700 dark:text-white"
+                      : "bg-gray-100 text-gray-900"
                   }`}
                 >
                   {category}
@@ -151,13 +158,13 @@ function App() {
           </ul>
         </div>
 
-        {/* Nội dung chính */}
+        {/* Main content */}
         <div className="w-3/4">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-              RLCraft VShop
-            </h1>
-            {/* Nút chuyển đổi chế độ tối/sáng */}
+            <img
+              src="https://static.wikia.nocookie.net/shivaxis-rlcraft/images/e/e6/Site-logo.png"
+              className="w-120 h-15 mb-2 mx-auto"
+            />
             <button
               onClick={toggleDarkMode}
               className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded flex items-center gap-2"
@@ -173,9 +180,15 @@ function App() {
               )}
             </button>
           </div>
+          <div className="marquee-container mb-4">
+            <div className="marquee-text rainbow-text">
+              Chào mừng đến với RLCraft VShop! Chào mừng bạn đến với thế giới
+              của RLCraft!{" "}
+            </div>
+          </div>
           <div
             id="playerInfo"
-            className="mb-4 text-gray-900 dark:text-gray-200"
+            className="mb-4 text-gray-900 dark:text-green-200"
           >
             <p>{playerInfo}</p>
           </div>
@@ -185,25 +198,42 @@ function App() {
           >
             {balance}
           </div>
-          <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-white">
+          <h2 className="text-2xl font-semibold mb-2 text-gray-900 dark:text-green-500">
             Shop
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {currentItems.map((item) => (
-              <ShopItem
-                key={item.itemId}
-                name={item.name}
-                itemId={item.itemId}
-                buyPrice={item.buyPrice}
-                sellPrice={item.sellPrice}
-                buyItem={buyItem}
-                sellItem={sellItem}
-                inputId={item.inputId}
-                imageSrc={item.imageSrc}
-              />
-            ))}
+          {/* Search bar */}
+          <div className="mb-4">
+            <input
+              type="text"
+              placeholder="Search items..."
+              value={searchQuery}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setCurrentPage(1); // Reset to first page on search
+              }}
+              className="w-full p-2 rounded bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
-          {/* Phân trang */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {filteredItems.length === 0 ? (
+              <p className="text-gray-900 dark:text-white">No items found.</p>
+            ) : (
+              currentItems.map((item) => (
+                <ShopItem
+                  key={item.itemId}
+                  name={item.name}
+                  itemId={item.itemId}
+                  buyPrice={item.buyPrice}
+                  sellPrice={item.sellPrice}
+                  buyItem={buyItem}
+                  sellItem={sellItem}
+                  inputId={item.inputId}
+                  imageSrc={item.imageSrc}
+                />
+              ))
+            )}
+          </div>
+          {/* Pagination */}
           <div className="flex justify-center mt-4">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
