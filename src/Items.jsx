@@ -3,6 +3,7 @@ const TOOLS_CATEGORY = "Tools";
 const WEAPONS_CATEGORY = "Weapons";
 const ARMOR_CATEGORY = "Armors";
 const FOOD_CATEGORY = "Foods";
+const CROPS_CATEGORY = "Crops";
 const MISC_CATEGORY = "Miscs";
 
 export const items = [
@@ -369,6 +370,56 @@ export const items = [
       "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Arrow_JE2_BE1.png",
     category: WEAPONS_CATEGORY,
   },
+  {
+    name: "The Sentient Greatcleaver",
+    itemId: "rlcraft:sentient_greatcleaver",
+    buyPrice: 10000000,
+    sellPrice: 1000000,
+    inputId: "sentientGreatcleaverAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/e/ee/The_Sentient_Greatcleaver.png",
+    category: WEAPONS_CATEGORY,
+  },
+  {
+    name: "The Sentient Greatsword",
+    itemId: "rlcraft:sentient_greatsword",
+    buyPrice: 10000000,
+    sellPrice: 1000000,
+    inputId: "sentientGreatswordAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/1/17/Weapon_sword_sentient.png",
+    category: WEAPONS_CATEGORY,
+  },
+  {
+    name: "The Sentient Greataxe",
+    itemId: "rlcraft:sentient_greataxe",
+    buyPrice: 10000000,
+    sellPrice: 1000000,
+    inputId: "sentientGreataxeAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/8/85/Weapon_axe_sentient.png",
+    category: WEAPONS_CATEGORY,
+  },
+  {
+    name: "The Sentient Scythe",
+    itemId: "rlcraft:sentient_scythe",
+    buyPrice: 10000000,
+    sellPrice: 1000000,
+    inputId: "sentientScytheAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/6/6a/Weapon_scythe_sentienttest.png",
+    category: WEAPONS_CATEGORY,
+  },
+  {
+    name: "The Sentient Bow",
+    itemId: "rlcraft:sentient_bow",
+    buyPrice: 15000000,
+    sellPrice: 1000000,
+    inputId: "sentientBowAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/scape-and-run-parasites/images/8/87/Sentient_Bow1.png",
+    category: WEAPONS_CATEGORY,
+  },
   // Armor
   {
     name: "Diamond Helmet",
@@ -591,4 +642,175 @@ export const items = [
       "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/44/Bread_JE3_BE3.png",
     category: FOOD_CATEGORY,
   },
+  // Crops - Seeds
+  {
+    name: "Wheat Seeds",
+    itemId: "minecraft:wheat_seeds",
+    buyPrice: 2,
+    sellPrice: 1,
+    inputId: "wheatSeedsAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/33/Wheat_Seeds_JE1_BE1.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Carrot",
+    itemId: "minecraft:carrot",
+    buyPrice: 5,
+    sellPrice: 4,
+    inputId: "carrotAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/4e/Carrot_JE3_BE2.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Potato",
+    itemId: "minecraft:potato",
+    buyPrice: 5,
+    sellPrice: 4,
+    inputId: "potatoAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c1/Potato_JE3_BE2.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Beetroot Seeds",
+    itemId: "minecraft:beetroot_seeds",
+    buyPrice: 3,
+    sellPrice: 2,
+    inputId: "beetrootSeedsAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/80/Beetroot_Seeds_JE2_BE2.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Pumpkin Seeds",
+    itemId: "minecraft:pumpkin_seeds",
+    buyPrice: 5,
+    sellPrice: 4,
+    inputId: "pumpkinSeedsAmount",
+    imageSrc: "https://minecraft.wiki/images/Pumpkin_Seeds_JE1_BE1.png?d9ae3",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Melon Seeds",
+    itemId: "minecraft:melon_seeds",
+    buyPrice: 5,
+    sellPrice: 4,
+    inputId: "melonSeedsAmount",
+    imageSrc: "https://minecraft.wiki/images/Melon_Seeds_JE2.png?59562",
+    category: CROPS_CATEGORY,
+  },
+  // Crops - Harvested
+  {
+    name: "Wheat",
+    itemId: "minecraft:wheat",
+    buyPrice: 4,
+    sellPrice: 3,
+    inputId: "wheatAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/75/Wheat_JE2_BE2.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Beetroot",
+    itemId: "minecraft:beetroot",
+    buyPrice: 6,
+    sellPrice: 5,
+    inputId: "beetrootAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/12/Beetroot_JE2_BE2.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Pumpkin",
+    itemId: "minecraft:pumpkin",
+    buyPrice: 20,
+    sellPrice: 15,
+    inputId: "pumpkinAmount",
+    imageSrc:
+      "https://minecraft.wiki/images/Carved_Pumpkin_%28N%29_JE5.png?32a4a",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Melon Slice",
+    itemId: "minecraft:melon",
+    buyPrice: 10,
+    sellPrice: 8,
+    inputId: "melonSliceAmount",
+    imageSrc: "https://minecraft.wiki/images/Melon_Slice_JE2_BE2.png?b8c6b",
+    category: CROPS_CATEGORY,
+  },
+  // Root Crops and Byproducts
+  {
+    name: "Poisoned Potato",
+    itemId: "minecraft:poisonous_potato",
+    buyPrice: 8,
+    sellPrice: 6,
+    inputId: "poisonedPotatoAmount",
+    imageSrc:
+      "https://minecraft.wiki/images/Poisonous_Potato_JE3_BE2.png?8f886",
+    category: CROPS_CATEGORY,
+  },
+  // Related Products
+  {
+    name: "Hay Bale",
+    itemId: "minecraft:hay_block",
+    buyPrice: 15,
+    sellPrice: 10,
+    inputId: "hayBaleAmount",
+    imageSrc:
+      "https://minecraft.wiki/images/thumb/Hay_Bale_%28UD%29_JE2_BE2.png/240px-Hay_Bale_%28UD%29_JE2_BE2.png?310e1",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Sugar Cane",
+    itemId: "minecraft:reeds",
+    buyPrice: 5,
+    sellPrice: 4,
+    inputId: "sugarCaneAmount",
+    imageSrc:
+      "https://minecraft.wiki/images/Sugar_Cane_%28item%29_JE3_BE3.png?f85e1",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Cocoa Beans",
+    itemId: "minecraft:dye:3",
+    buyPrice: 8,
+    sellPrice: 6,
+    inputId: "cocoaBeansAmount",
+    imageSrc: "https://minecraft.wiki/images/Cocoa_Beans_JE4_BE3.png?48f20",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Bone Meal",
+    itemId: "minecraft:dye:15",
+    buyPrice: 5,
+    sellPrice: 4,
+    inputId: "boneMealAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b1/Bone_Meal_JE3_BE3.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Nether Wart",
+    itemId: "minecraft:nether_wart",
+    buyPrice: 10,
+    sellPrice: 8,
+    inputId: "netherWartAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3f/Nether_Wart_%28item%29_JE2_BE1.png",
+    category: CROPS_CATEGORY,
+  },
+  {
+    name: "Vines",
+    itemId: "minecraft:vine",
+    buyPrice: 150,
+    sellPrice: 50,
+    inputId: "vinesAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/64/Vines_JE2_BE2.png",
+    category: CROPS_CATEGORY,
+  },
+  // Misc
 ];
