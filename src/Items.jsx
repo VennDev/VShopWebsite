@@ -813,4 +813,14 @@ export const items = [
     category: CROPS_CATEGORY,
   },
   // Misc
+  {
+    name: "Battle Burrito",
+    itemId: "lycanitesmobs:battle_burrito",
+    buyPrice: 500000,
+    sellPrice: 100000,
+    inputId: "battleBurritoAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/e/ef/Battle_Burrito.png",
+    category: MISC_CATEGORY,
+  },
 ];
