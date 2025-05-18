@@ -373,8 +373,8 @@ export const items = [
   {
     name: "The Sentient Greatcleaver",
     itemId: "rlcraft:sentient_greatcleaver",
-    buyPrice: 10000000,
-    sellPrice: 1000000,
+    buyPrice: 1000000,
+    sellPrice: 500000,
     inputId: "sentientGreatcleaverAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/e/ee/The_Sentient_Greatcleaver.png",
@@ -383,8 +383,8 @@ export const items = [
   {
     name: "The Sentient Greatsword",
     itemId: "rlcraft:sentient_greatsword",
-    buyPrice: 10000000,
-    sellPrice: 1000000,
+    buyPrice: 1000000,
+    sellPrice: 500000,
     inputId: "sentientGreatswordAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/1/17/Weapon_sword_sentient.png",
@@ -393,8 +393,8 @@ export const items = [
   {
     name: "The Sentient Greataxe",
     itemId: "rlcraft:sentient_greataxe",
-    buyPrice: 10000000,
-    sellPrice: 1000000,
+    buyPrice: 1000000,
+    sellPrice: 500000,
     inputId: "sentientGreataxeAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/8/85/Weapon_axe_sentient.png",
@@ -403,8 +403,8 @@ export const items = [
   {
     name: "The Sentient Scythe",
     itemId: "rlcraft:sentient_scythe",
-    buyPrice: 10000000,
-    sellPrice: 1000000,
+    buyPrice: 1000000,
+    sellPrice: 500000,
     inputId: "sentientScytheAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/6/6a/Weapon_scythe_sentienttest.png",
@@ -413,8 +413,8 @@ export const items = [
   {
     name: "The Sentient Bow",
     itemId: "rlcraft:sentient_bow",
-    buyPrice: 15000000,
-    sellPrice: 1000000,
+    buyPrice: 1500000,
+    sellPrice: 500000,
     inputId: "sentientBowAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/scape-and-run-parasites/images/8/87/Sentient_Bow1.png",
@@ -816,11 +816,91 @@ export const items = [
   {
     name: "Battle Burrito",
     itemId: "lycanitesmobs:battle_burrito",
-    buyPrice: 500000,
-    sellPrice: 100000,
+    buyPrice: 10000,
+    sellPrice: 5000,
     inputId: "battleBurritoAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/shivaxis-rlcraft/images/e/ef/Battle_Burrito.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Zombie Flesh",
+    itemId: "minecraft:rotten_flesh",
+    buyPrice: 20,
+    sellPrice: 10,
+    inputId: "zombieFleshAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/ac/Rotten_Flesh_JE3_BE2.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Spider Eye",
+    itemId: "minecraft:spider_eye",
+    buyPrice: 10,
+    sellPrice: 8,
+    inputId: "spiderEyeAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/1/1a/Spider_Eye_JE2_BE2.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Ender Pearl",
+    itemId: "minecraft:ender_pearl",
+    buyPrice: 50,
+    sellPrice: 40,
+    inputId: "enderPearlAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f6/Ender_Pearl_JE3_BE2.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Ghast Tear",
+    itemId: "minecraft:ghast_tear",
+    buyPrice: 100,
+    sellPrice: 80,
+    inputId: "ghastTearAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/c/c5/Ghast_Tear_JE2_BE2.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Blaze Rod",
+    itemId: "minecraft:blaze_rod",
+    buyPrice: 50,
+    sellPrice: 40,
+    inputId: "blazeRodAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/87/Blaze_Rod_JE1_BE1.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Ender Eye",
+    itemId: "minecraft:ender_eye",
+    buyPrice: 200,
+    sellPrice: 150,
+    inputId: "enderEyeAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Eye_of_Ender_JE2_BE2.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Blaze Powder",
+    itemId: "minecraft:blaze_powder",
+    buyPrice: 30,
+    sellPrice: 25,
+    inputId: "blazePowderAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7c/Blaze_Powder_JE2_BE1.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Gunpowder",
+    itemId: "minecraft:gunpowder",
+    buyPrice: 10,
+    sellPrice: 8,
+    inputId: "gunpowderAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/40/Gunpowder_JE2_BE2.png",
     category: MISC_CATEGORY,
   },
 ];
