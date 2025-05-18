@@ -2,6 +2,7 @@ import ShopItem from "./components/ShopItem";
 import { useState, useEffect } from "react";
 import "./App.css";
 import { items } from "./Items";
+import { formatter_number } from "./utils/Number";
 
 function App() {
   const [uuid, setUuid] = useState("");
@@ -48,7 +49,7 @@ function App() {
       const response = await fetch(urlRequest + `/balance?uuid=${uuid}`);
       const data = await response.json();
       setPlayerInfo(`Player UUID: ${data.uuid}`);
-      setBalance(`Balance: ${data.coins} coins`);
+      setBalance(`Balance: ${formatter_number(data.coins)} coins`);
     } catch (error) {
       setPlayerInfo("Error connecting to server. Error: " + error);
     }
