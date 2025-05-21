@@ -21,3 +21,18 @@ export const formatter_number = (value) => {
   }
   return Formatter.format(value);
 };
+
+export const equivalent = (value, fullStack) => {
+  const chunks = [];
+
+  let remaining = value;
+  while (remaining >= fullStack) {
+    chunks.push(fullStack);
+    remaining -= fullStack;
+  }
+  if (remaining > 0) {
+    chunks.push(remaining);
+  }
+
+  return chunks;
+};

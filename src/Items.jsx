@@ -1,10 +1,10 @@
-const ORES_CATEGORY = "Ores";
-const TOOLS_CATEGORY = "Tools";
-const WEAPONS_CATEGORY = "Weapons";
-const ARMOR_CATEGORY = "Armors";
-const FOOD_CATEGORY = "Foods";
-const CROPS_CATEGORY = "Crops";
-const MISC_CATEGORY = "Miscs";
+export const ORES_CATEGORY = "Ores";
+export const TOOLS_CATEGORY = "Tools";
+export const WEAPONS_CATEGORY = "Weapons";
+export const ARMOR_CATEGORY = "Armors";
+export const FOOD_CATEGORY = "Foods";
+export const CROPS_CATEGORY = "Crops";
+export const MISC_CATEGORY = "Miscs";
 
 export const items = [
   // Ores
@@ -852,6 +852,7 @@ export const items = [
     imageSrc:
       "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f6/Ender_Pearl_JE3_BE2.png",
     category: MISC_CATEGORY,
+    fullStack: 16,
   },
   {
     name: "Ghast Tear",

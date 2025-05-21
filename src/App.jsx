@@ -1,8 +1,13 @@
 import ShopItem from "./components/ShopItem";
 import { useState, useEffect } from "react";
 import "./App.css";
-import { items } from "./Items";
-import { formatter_number } from "./utils/Number";
+import {
+  ARMOR_CATEGORY,
+  items,
+  TOOLS_CATEGORY,
+  WEAPONS_CATEGORY,
+} from "./Items";
+import { equivalent, formatter_number } from "./utils/Number";
 
 function App() {
   const [uuid, setUuid] = useState("");
@@ -55,24 +60,39 @@ function App() {
     }
   };
 
-  const buyItem = async (item, amount) => {
+  const buyItem = async (item, amount, category, fullStack) => {
     if (!uuid || !amount || amount < 1) {
       alert("Invalid amount.");
       return;
     }
-    try {
-      const response = await fetch(
-        urlRequest + `/buy?uuid=${uuid}&item=${item}&amount=${amount}`
-      );
-      const data = await response.json();
-      if (data.status === "success") {
-        alert("Purchase successful!");
-        checkBalance(uuid);
-      } else {
-        alert("Not enough coins.");
+    let isCategoryTools =
+      category == TOOLS_CATEGORY ||
+      category == ARMOR_CATEGORY ||
+      category == WEAPONS_CATEGORY;
+    if (isCategoryTools) {
+      fullStack = 1;
+    }
+    if (fullStack === undefined) {
+      fullStack = 64;
+    }
+    let listEquivalent = equivalent(amount, fullStack);
+    console.log(listEquivalent);
+    for (let i = 0; i < listEquivalent.length; i++) {
+      let value = listEquivalent[i];
+      try {
+        const response = await fetch(
+          urlRequest + `/buy?uuid=${uuid}&item=${item}&amount=${value}`
+        );
+        const data = await response.json();
+        if (data.status === "success") {
+          alert("Purchase successful!");
+          checkBalance(uuid);
+        } else {
+          alert("Not enough coins.");
+        }
+      } catch (error) {
+        alert("Error connecting to server. Error: " + error);
       }
-    } catch (error) {
-      alert("Error connecting to server. Error: " + error);
     }
   };
 
@@ -230,6 +250,8 @@ function App() {
                   sellItem={sellItem}
                   inputId={item.inputId}
                   imageSrc={item.imageSrc}
+                  category={item.category}
+                  fullStack={item.fullStack}
                 />
               ))
             )}
