@@ -361,16 +361,6 @@ export const items = [
     category: WEAPONS_CATEGORY,
   },
   {
-    name: "Arrow",
-    itemId: "minecraft:arrow",
-    buyPrice: 10,
-    sellPrice: 8,
-    inputId: "arrowAmount",
-    imageSrc:
-      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Arrow_JE2_BE1.png",
-    category: WEAPONS_CATEGORY,
-  },
-  {
     name: "The Sentient Greatcleaver",
     itemId: "rlcraft:sentient_greatcleaver",
     buyPrice: 1000000,
@@ -902,6 +892,16 @@ export const items = [
     inputId: "gunpowderAmount",
     imageSrc:
       "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/40/Gunpowder_JE2_BE2.png",
+    category: MISC_CATEGORY,
+  },
+  {
+    name: "Arrow",
+    itemId: "minecraft:arrow",
+    buyPrice: 10,
+    sellPrice: 8,
+    inputId: "arrowAmount",
+    imageSrc:
+      "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/58/Arrow_JE2_BE1.png",
     category: MISC_CATEGORY,
   },
 ];
